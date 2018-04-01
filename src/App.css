@@ -34,3 +34,15 @@ text {
   font-weight: bold;
   font-size: 14px;
 }
+
+.star-label {
+  text-anchor: right;
+}
+
+circle {
+  fill: grey;
+}
+
+.highlight {
+  fill: yellow;
+}

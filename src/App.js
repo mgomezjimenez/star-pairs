@@ -16,7 +16,10 @@ const lat = -30.24073,
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { mom: moment().utc() };
+    this.state = {
+      mom: moment().utc(),
+      info: { stars: [{ name: null }, { name: null }] }
+    };
   }
 
   componentDidMount() {
@@ -30,6 +33,12 @@ class App extends React.Component {
   tick() {
     this.setState({
       mom: moment().utc()
+    });
+  }
+
+  focus(e, p) {
+    this.setState({
+      info: p
     });
   }
 
@@ -118,18 +127,43 @@ class App extends React.Component {
             .filter(p => p.coords[0].alt >= horizon_limit)
             .map(p => {
               let p1 = project([p.coords[0].az, p.coords[0].alt]),
-                p2 = project([p.coords[1].az, p.coords[1].alt]);
+                p2 = project([p.coords[1].az, p.coords[1].alt]),
+                radius = Math.pow(p.stars[0].mag, 2) / 20;
               return (
                 <g>
-                  <title>{p.stars[0].name}</title>
-                  <circle
-                    r={Math.pow(p.stars[0].mag, 2) / 20}
-                    transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
-                  />
-                  <circle
-                    r={Math.pow(p.stars[1].mag, 2) / 20}
-                    transform={'translate(' + p2[0] + ',' + p2[1] + ')'}
-                  />
+                  {this.state.info.stars[0].name === p.stars[0].name ? (
+                    <circle
+                      onMouseOver={e => this.focus(e, p)}
+                      r={radius}
+                      transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
+                      className="highlight"
+                    />
+                  ) : (
+                    <circle
+                      onMouseOver={e => this.focus(e, p)}
+                      r={radius}
+                      transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
+                    />
+                  )}
+                  {this.state.info.stars[0].name === p.stars[0].name ? (
+                    <text
+                      x="0"
+                      y="0"
+                      transform={
+                        'translate(' + (p1[0] + radius) + ',' + p1[1] + ')'
+                      }
+                    >
+                      <tspan x="0" dy="1.2em">
+                        Acq: {this.state.info.stars[0].name}
+                      </tspan>
+                      <tspan x="0" dy="1.2em">
+                        Guide: {this.state.info.stars[1].name}
+                      </tspan>
+                      <tspan x="0" dy="1.2em">
+                        Sep: {this.state.info.stars[0].sep}
+                      </tspan>
+                    </text>
+                  ) : null}
                 </g>
               );
             })}
