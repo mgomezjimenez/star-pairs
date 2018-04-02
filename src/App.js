@@ -43,6 +43,13 @@ class App extends React.Component {
   }
 
   render() {
+    // TODO: Cleaner way to do this?
+    // Coordinates of star pair under focus.
+    let po =
+      this.state.info.coords !== undefined
+        ? project([this.state.info.coords[0].az, this.state.info.coords[0].alt])
+        : null;
+
     return (
       <div className="App">
         <svg width={960} height={960}>
@@ -130,35 +137,32 @@ class App extends React.Component {
                 radius = Math.pow(p.stars[0].mag, 2) / 20,
                 focused = this.state.info.stars[0].name === p.stars[0].name;
               return (
-                <g>
-                  <circle
-                    className={focused ? 'highlight' : null}
-                    onMouseOver={e => this.focus(e, p)}
-                    r={radius}
-                    transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
-                  />
-                  {focused && (
-                    <text
-                      x="0"
-                      y="0"
-                      transform={
-                        'translate(' + (p1[0] + radius) + ',' + p1[1] + ')'
-                      }
-                    >
-                      <tspan x="0" dy="1.2em">
-                        Acq: {this.state.info.stars[0].name}
-                      </tspan>
-                      <tspan x="0" dy="1.2em">
-                        Guide: {this.state.info.stars[1].name}
-                      </tspan>
-                      <tspan x="0" dy="1.2em">
-                        Sep: {this.state.info.stars[0].sep}
-                      </tspan>
-                    </text>
-                  )}
-                </g>
+                <circle
+                  className={focused ? 'highlight' : null}
+                  onMouseOver={e => this.focus(e, p)}
+                  r={radius}
+                  transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
+                />
               );
             })}
+
+          {po !== null && (
+            <text
+              x="0"
+              y="0"
+              transform={'translate(' + (po[0] + 10) + ',' + po[1] + ')'}
+            >
+              <tspan x="0" dy="1.2em">
+                Acq: {this.state.info.stars[0].name}
+              </tspan>
+              <tspan x="0" dy="1.2em">
+                Guide: {this.state.info.stars[1].name}
+              </tspan>
+              <tspan x="0" dy="1.2em">
+                Sep: {this.state.info.stars[0].sep}
+              </tspan>
+            </text>
+          )}
         </svg>
       </div>
     );
