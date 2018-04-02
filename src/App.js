@@ -127,25 +127,17 @@ class App extends React.Component {
             .filter(p => p.coords[0].alt >= horizon_limit)
             .map(p => {
               let p1 = project([p.coords[0].az, p.coords[0].alt]),
-                p2 = project([p.coords[1].az, p.coords[1].alt]),
-                radius = Math.pow(p.stars[0].mag, 2) / 20;
+                radius = Math.pow(p.stars[0].mag, 2) / 20,
+                focused = this.state.info.stars[0].name === p.stars[0].name;
               return (
                 <g>
-                  {this.state.info.stars[0].name === p.stars[0].name ? (
-                    <circle
-                      onMouseOver={e => this.focus(e, p)}
-                      r={radius}
-                      transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
-                      className="highlight"
-                    />
-                  ) : (
-                    <circle
-                      onMouseOver={e => this.focus(e, p)}
-                      r={radius}
-                      transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
-                    />
-                  )}
-                  {this.state.info.stars[0].name === p.stars[0].name ? (
+                  <circle
+                    className={focused ? 'highlight' : null}
+                    onMouseOver={e => this.focus(e, p)}
+                    r={radius}
+                    transform={'translate(' + p1[0] + ',' + p1[1] + ')'}
+                  />
+                  {focused && (
                     <text
                       x="0"
                       y="0"
@@ -163,7 +155,7 @@ class App extends React.Component {
                         Sep: {this.state.info.stars[0].sep}
                       </tspan>
                     </text>
-                  ) : null}
+                  )}
                 </g>
               );
             })}
