@@ -5,6 +5,7 @@
   "dependencies": {
     "d3": "^5.0.0",
     "d3-geo": "^1.10.0",
+    "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "moment": "^2.21.0",
@@ -13,6 +14,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
   },
+  "homepage": "https://mgomezjimenez.github.io/star-pairs",
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
@@ -21,6 +23,8 @@
   },
   "scripts": {
     "precommit": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
