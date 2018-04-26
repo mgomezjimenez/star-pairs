@@ -134,7 +134,7 @@ class App extends React.Component {
             .filter(p => p.coords[0].alt >= horizon_limit)
             .map(p => {
               let p1 = project([p.coords[0].az, p.coords[0].alt]),
-                radius = Math.pow(p.stars[0].mag, 2) / 20,
+                radius = 20 / Math.pow(p.stars[0].mag, 1.05),
                 focused = this.state.info.stars[0].name === p.stars[0].name;
               return (
                 <circle
@@ -152,14 +152,14 @@ class App extends React.Component {
               y="0"
               transform={'translate(' + (po[0] + 10) + ',' + po[1] + ')'}
             >
-              <tspan x="0" dy="1.2em">
-                Acq: {this.state.info.stars[0].name}
+              <tspan x="1.0em" dy="1.2em">
+                {this.state.info.stars[0].name}
               </tspan>
               <tspan x="0" dy="1.2em">
-                Guide: {this.state.info.stars[1].name}
+                Vmag: {this.state.info.stars[0].mag}
               </tspan>
               <tspan x="0" dy="1.2em">
-                Sep: {this.state.info.stars[0].sep}
+                Vmag: {this.state.info.stars[1].mag}
               </tspan>
             </text>
           )}
