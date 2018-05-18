@@ -1,7 +1,7 @@
 # Star pairs
 [![Join the chat at https://gitter.im/mgomezjimenez/star-pairs](https://badges.gitter.im/mgomezjimenez/star-pairs.svg)](https://gitter.im/mgomezjimenez/star-pairs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A static single web page application to project pairs of stairs in real time and
+A static single web page application to project pairs of stars in real time and
 display information when mousing over them.
 
 [![Star pairs screenshot](https://github.com/mgomezjimenez/star-pairs/raw/master/screenshot.png??raw=true)](https://mgomezjimenez.github.io/star-pairs/)
