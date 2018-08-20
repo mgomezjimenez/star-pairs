@@ -44,11 +44,13 @@ circle {
 }
 
 .highlight {
-  stroke: #6c757d;
-  stroke-width: 1.5;
+  stroke: black;
+  stroke-width: 1;
   fill: #ffc107;
 }
 
 rect {
-  fill: #6c757d;
+  stroke: black;
+  stroke-width: 1;
+  fill: #ffc107;
 }
