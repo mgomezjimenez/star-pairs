@@ -44,11 +44,22 @@ circle {
 }
 
 .highlight {
-  stroke: #6c757d;
+  stroke: black;
   stroke-width: 1.5;
   fill: #ffc107;
 }
 
 rect {
-  fill: #6c757d;
+  stroke: black;
+  stroke-width: 1.5;
+  fill: #ffc107;
+}
+
+.subind {
+  font-size: 6px;
+  baseline-shift: sub;
+}
+
+.title {
+  font-weight: bold;
 }

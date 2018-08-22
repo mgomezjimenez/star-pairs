@@ -151,10 +151,10 @@ class App extends React.Component {
               <rect
                 x="0"
                 y="0"
-                width="65"
-                height="40"
-                rx="10"
-                ry="10"
+                width="70"
+                height="43"
+                rx="13"
+                ry="13"
                 transform={'translate(' + po[0] + ',' + po[1] + ')'}
               />
               <text
@@ -162,14 +162,16 @@ class App extends React.Component {
                 y="0"
                 transform={'translate(' + (po[0] + 10) + ',' + po[1] + ')'}
               >
-                <tspan x="1.0em" dy="1.2em">
+                <tspan class="title" x="1.0em" dy="1.2em">
                   {this.state.info.stars[0].name}
                 </tspan>
                 <tspan x="0" dy="1.2em">
-                  Vmag: {this.state.info.stars[0].mag}
+                  m <tspan class="subind">V,Acq</tspan>:{' '}
+                  {this.state.info.stars[0].mag}
                 </tspan>
                 <tspan x="0" dy="1.2em">
-                  Vmag: {this.state.info.stars[1].mag}
+                  m <tspan class="subind">V,WFS</tspan>:{' '}
+                  {this.state.info.stars[1].mag}
                 </tspan>
               </text>
             </g>
