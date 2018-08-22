@@ -45,12 +45,21 @@ circle {
 
 .highlight {
   stroke: black;
-  stroke-width: 1;
+  stroke-width: 1.5;
   fill: #ffc107;
 }
 
 rect {
   stroke: black;
-  stroke-width: 1;
+  stroke-width: 1.5;
   fill: #ffc107;
+}
+
+.subind {
+  font-size: 6px;
+  baseline-shift: sub;
+}
+
+.title {
+  font-weight: bold;
 }
