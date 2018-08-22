@@ -155,6 +155,7 @@ class App extends React.Component {
                 height="43"
                 rx="13"
                 ry="13"
+
                 transform={'translate(' + po[0] + ',' + po[1] + ')'}
               />
               <text
@@ -162,6 +163,7 @@ class App extends React.Component {
                 y="0"
                 transform={'translate(' + (po[0] + 10) + ',' + po[1] + ')'}
               >
+
                 <tspan class="title" x="1.0em" dy="1.2em">
                   {this.state.info.stars[0].name}
                 </tspan>
