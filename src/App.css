@@ -54,3 +54,12 @@ rect {
   stroke-width: 1;
   fill: #ffc107;
 }
+
+.sub {
+  font-size: 5.5px;
+  baseline-shift: sub;
+}
+
+.title {
+  font-weight: bold;
+}

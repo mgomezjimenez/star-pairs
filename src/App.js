@@ -149,35 +149,29 @@ class App extends React.Component {
           {po !== null && (
             <g>
               <rect
-                x="0"
-                y="0"
-                width="70"
-                height="45"
+                x="3"
+                y="3"
+                width="62"
+                height="43"
                 rx="10"
                 ry="10"
                 transform={'translate(' + po[0] + ',' + po[1] + ')'}
               />
               <text
-                x="0"
-                y="0"
+                x="3"
+                y="3"
                 transform={'translate(' + (po[0] + 10) + ',' + po[1] + ')'}
               >
-                <tspan x="0.0em" dy="1.2em" font-weight="bold">
+                <tspan class="title" x="0.0em" dy="1.2em">
                   {this.state.info.stars[0].name}
                 </tspan>
                 <tspan x="0" dy="1.2em">
-                  m
-                  <tspan font-size="6" baseline-shift="sub">
-                    V,Acq
-                  </tspan>
-                  : {this.state.info.stars[0].mag}
+                  m<tspan class="sub">V,Acq</tspan>:{' '}
+                  {this.state.info.stars[0].mag}
                 </tspan>
                 <tspan x="0" dy="1.2em">
-                  m
-                  <tspan font-size="6" baseline-shift="sub">
-                    V,WFS
-                  </tspan>
-                  : {this.state.info.stars[1].mag}
+                  m<tspan class="sub">V,WFS</tspan>:{' '}
+                  {this.state.info.stars[1].mag}
                 </tspan>
               </text>
             </g>
