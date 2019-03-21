@@ -58,6 +58,7 @@ rect {
 .sub {
   font-size: 5.5px;
   baseline-shift: sub;
+  baseline-shift: 0px;
 }
 
 .title {

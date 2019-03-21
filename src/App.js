@@ -152,7 +152,7 @@ class App extends React.Component {
                 x="3"
                 y="3"
                 width="62"
-                height="43"
+                height="65"
                 rx="10"
                 ry="10"
                 transform={'translate(' + po[0] + ',' + po[1] + ')'}
@@ -172,6 +172,13 @@ class App extends React.Component {
                 <tspan x="0" dy="1.2em">
                   m<tspan class="sub">V,WFS</tspan>:{' '}
                   {this.state.info.stars[1].mag}
+                </tspan>
+                <tspan x="0" dy="1.2em">
+                  Sep: {this.state.info.stars[0].sep}"
+                </tspan>
+                <tspan x="0" dy="1.2em">
+                  PA: {this.state.info.stars[1].sep}
+                  &deg;
                 </tspan>
               </text>
             </g>
