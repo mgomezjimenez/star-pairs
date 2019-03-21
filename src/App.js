@@ -174,7 +174,7 @@ class App extends React.Component {
                   {this.state.info.stars[1].mag}
                 </tspan>
                 <tspan x="0" dy="1.2em">
-                  Sep: {this.state.info.stars[0].sep}"
+                  Sep: {this.state.info.stars[0].sep}'
                 </tspan>
                 <tspan x="0" dy="1.2em">
                   PA: {this.state.info.stars[1].sep}
