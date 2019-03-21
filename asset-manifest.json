@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.d8f1a853.css",
-  "main.css.map": "static/css/main.d8f1a853.css.map",
-  "main.js": "static/js/main.2e98d91c.js",
-  "main.js.map": "static/js/main.2e98d91c.js.map"
+  "main.css": "/star-pairs/static/css/main.c9204275.chunk.css",
+  "main.js": "/star-pairs/static/js/main.562aa9c7.chunk.js",
+  "main.js.map": "/star-pairs/static/js/main.562aa9c7.chunk.js.map",
+  "runtime~main.js": "/star-pairs/static/js/runtime~main.b5c12489.js",
+  "runtime~main.js.map": "/star-pairs/static/js/runtime~main.b5c12489.js.map",
+  "static/js/2.eaffa79b.chunk.js": "/star-pairs/static/js/2.eaffa79b.chunk.js",
+  "static/js/2.eaffa79b.chunk.js.map": "/star-pairs/static/js/2.eaffa79b.chunk.js.map",
+  "index.html": "/star-pairs/index.html",
+  "precache-manifest.9b2008522b177af46242a859e893dde3.js": "/star-pairs/precache-manifest.9b2008522b177af46242a859e893dde3.js",
+  "service-worker.js": "/star-pairs/service-worker.js",
+  "static/css/main.c9204275.chunk.css.map": "/star-pairs/static/css/main.c9204275.chunk.css.map"
 }
